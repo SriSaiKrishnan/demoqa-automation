@@ -9,6 +9,7 @@
 		<classes>
 			<class name="com.sai.toolsqa.TextBoxTest" />
 			<class name="com.sai.toolsqa.CheckBoxTest" />
+			<class name="com.sai.toolsqa.RadioButtonTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
