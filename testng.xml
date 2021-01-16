@@ -5,11 +5,12 @@
 		<listener
 			class-name="com.toolsqa.listeners.TestAllureListener" />
 	</listeners>
-	<test name="Test">
+	<test name="Test" >
 		<classes>
-			<!-- <class name="com.sai.toolsqa.TextBoxTest" />
-			<class name="com.sai.toolsqa.CheckBoxTest" /> -->
+			<class name="com.sai.toolsqa.TextBoxTest" />
+			<class name="com.sai.toolsqa.CheckBoxTest" />
 			<class name="com.sai.toolsqa.RadioButtonTest" />
+			<class name="com.sai.toolsqa.WebTableTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
