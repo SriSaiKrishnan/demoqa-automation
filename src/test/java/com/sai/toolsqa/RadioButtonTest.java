@@ -8,13 +8,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.toolsqa.base.BasePage;
+import com.toolsqa.listeners.TestAllureListener;
 import com.toolsqa.pages.RadioButtonPage;
-
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 
-@Listeners
+@Listeners(TestAllureListener.class)
 public class RadioButtonTest {
 	
 	public Properties prop;
