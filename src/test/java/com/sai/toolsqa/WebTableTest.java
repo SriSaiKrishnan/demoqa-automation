@@ -1,9 +1,7 @@
 package com.sai.toolsqa;
 
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -11,6 +9,10 @@ import org.testng.annotations.Test;
 import com.toolsqa.base.BasePage;
 import com.toolsqa.listeners.TestAllureListener;
 import com.toolsqa.pages.WebTablePage;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 
 @Listeners(TestAllureListener.class)
 public class WebTableTest {
@@ -29,7 +31,9 @@ public class WebTableTest {
 		webTablePage = new WebTablePage(driver);
 	}
 	
-	@Test
+	@Test(priority=1, description = "Add User")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Add User")
 	public void testOne() {
 		webTablePage.clickElements();
 		webTablePage.clickWebTable();
@@ -43,7 +47,9 @@ public class WebTableTest {
 		webTablePage.clickOnSubmit();
 	}
 	
-	@Test
+	@Test(priority=1, description = "Edit User")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Edit User")
 	public void testTwo() {
 		webTablePage.clickElements();
 		webTablePage.clickWebTable();
@@ -57,7 +63,9 @@ public class WebTableTest {
 		webTablePage.clickOnSubmit();
 	}
 	
-	@Test
+	@Test(priority=1, description = "Click on delete link")
+	@Severity(SeverityLevel.CRITICAL)
+	@Description("Click on Delete")
 	public void testThree() {
 		webTablePage.clickElements();
 		webTablePage.clickWebTable();

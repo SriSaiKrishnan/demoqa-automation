@@ -33,10 +33,10 @@ public class WebTablePage extends BasePage {
 	@FindBy(id = "submit")
 	private WebElement submit;
 	
-	@FindBy(xpath = "//div[text()='cierra@example.com']//following::div[text()='Insurance']//following::div//div//span[@id='edit-record-1']")
+	@FindBy(xpath = "//div[contains(text(),'cierra@example.com')]/..//span[@title='Edit']")
 	private WebElement edit;
 	
-	@FindBy(xpath = "//div[text()='cierra@example.com']//following::div[text()='Insurance']//following::div//div//span[@id='delete-record-1']")
+	@FindBy(xpath = "//div[contains(text(),'cierra@example.com')]/..//span[@title='Delete']")
 	private WebElement delete;
 	
 	@FindBy(xpath = "//h5[text() = 'Elements']")

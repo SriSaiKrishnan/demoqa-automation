@@ -11,6 +11,7 @@
 			<class name="com.sai.toolsqa.CheckBoxTest" />
 			<class name="com.sai.toolsqa.RadioButtonTest" />
 			<class name="com.sai.toolsqa.WebTableTest" />
+			<class name="com.sai.toolsqa.ButtonTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
