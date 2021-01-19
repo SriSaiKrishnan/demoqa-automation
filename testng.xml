@@ -12,6 +12,7 @@
 			<class name="com.sai.toolsqa.RadioButtonTest" />
 			<class name="com.sai.toolsqa.WebTableTest" />
 			<class name="com.sai.toolsqa.ButtonTest" />
+			<class name="com.sai.toolsqa.LinkPageTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
