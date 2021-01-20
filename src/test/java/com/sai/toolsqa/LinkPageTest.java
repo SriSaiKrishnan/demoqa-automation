@@ -3,15 +3,16 @@ package com.sai.toolsqa;
 import static org.testng.Assert.assertEquals;
 
 import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.toolsqa.base.BasePage;
+import com.toolsqa.listeners.TestAllureListener;
 import com.toolsqa.pages.LinksPage;
 
+@Listeners(TestAllureListener.class)
 public class LinkPageTest {
 	
 	public Properties prop;
