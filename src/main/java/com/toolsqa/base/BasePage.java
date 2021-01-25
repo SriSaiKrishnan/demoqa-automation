@@ -38,7 +38,7 @@ public class BasePage {
 		System.setProperty("webdriver.chrome.driver","/usr/local/bin/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
-		driver.manage().window().fullscreen();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		tdriver.set(driver);
 		return getDriver();
