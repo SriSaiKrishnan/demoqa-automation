@@ -13,6 +13,7 @@
 			<class name="com.sai.toolsqa.WebTableTest" />
 			<class name="com.sai.toolsqa.ButtonTest" />
 			<class name="com.sai.toolsqa.LinkPageTest" />
+			<class name="com.sai.toolsqa.UploadandDownloadTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
