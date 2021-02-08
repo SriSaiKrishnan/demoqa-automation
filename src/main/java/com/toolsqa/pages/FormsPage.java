@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.toolsqa.base.BasePage;
 
+import io.qameta.allure.Step;
+
 public class FormsPage extends BasePage {
 	
 	@FindBy(xpath = "//h5[text() = 'Forms']")
@@ -51,6 +53,43 @@ public class FormsPage extends BasePage {
 	public FormsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+	}
+	
+	@Step
+	public FormsPage clickOnForms() {
+		forms.click();
+		privateForms.click();
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterFirstName(String firstname) {
+		firstName.sendKeys(firstname);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterLastName(String lastname) {
+		lastName.sendKeys(lastname);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterEmailId(String emailid) {
+		userEmail.sendKeys(emailid);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterMobileNum(String mobNum) {
+		userNumber.sendKeys(mobNum);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterSubjects(String subject) {
+		subjectContainer.sendKeys(subject);
+		return new FormsPage(driver);
 	}
 
 }
