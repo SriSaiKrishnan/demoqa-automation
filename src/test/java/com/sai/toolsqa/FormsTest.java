@@ -32,6 +32,18 @@ public class FormsTest {
 	@Test
 	public void testOne() {
 		formsPage.clickOnForms();
+		formsPage.enterFirstName("Sai");
+		formsPage.enterLastName("Krishnan");
+		formsPage.enterEmailId("krishnansai99@gmail.com");
+		formsPage.enterMobileNum("9656345324");
+		formsPage.enterSubjects("Maths");
+		formsPage.enterAddress("ABC");
+		formsPage.enterState("NCR");
+		formsPage.enterCity("Delhi");
+		formsPage.selectGender();
+		formsPage.selectHobbies();
+		formsPage.enterDOB("10022021");
+		formsPage.clickOnSubmit();
 	}
 	
 	@AfterMethod

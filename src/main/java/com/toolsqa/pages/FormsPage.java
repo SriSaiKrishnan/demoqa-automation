@@ -1,9 +1,13 @@
 package com.toolsqa.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.toolsqa.base.BasePage;
 
@@ -29,10 +33,16 @@ public class FormsPage extends BasePage {
 	@FindBy(id = "userNumber")
 	private WebElement userNumber;
 	
+	@FindBy(id = "gender-radio-1")
+	private WebElement genderRadio;
+	
+	@FindBy(id = "hobbies-checkbox-1")
+	private WebElement hobbies;
+	
 	@FindBy(id = "dateOfBirthInput")
 	private WebElement dob;
 	
-	@FindBy(id = "subjectsContainer")
+	@FindBy(xpath = "//div[@id='subjectsContainer']//div//div")
 	private WebElement subjectContainer;
 	
 	@FindBy(id = "uploadPicture")
@@ -53,6 +63,11 @@ public class FormsPage extends BasePage {
 	public FormsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+	}
+	
+	public void wait(WebElement element) {
+		WebDriverWait driverWait =  new WebDriverWait(driver, 30);
+		driverWait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	@Step
@@ -88,7 +103,60 @@ public class FormsPage extends BasePage {
 	
 	@Step
 	public FormsPage enterSubjects(String subject) {
-		subjectContainer.sendKeys(subject);
+		wait(subjectContainer);
+		String js = "arguments[0].setAttribute('value','"+subject+"')";
+		((JavascriptExecutor) driver).executeScript(js, subjectContainer);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage uploadPicture(String path) {
+		uploadPicture.sendKeys(path);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterAddress(String address) {
+		currentAddress.sendKeys(address);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterDOB(String date) {
+		dob.sendKeys(date);
+		state.sendKeys(Keys.TAB);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterState(String State) {
+		state.sendKeys(State);
+		state.sendKeys(Keys.ENTER);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage enterCity(String City) {
+		city.sendKeys(City);
+		city.sendKeys(Keys.ENTER);
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage selectGender() {
+		genderRadio.click();
+		return new FormsPage(driver);
+	}
+	
+	@Step
+	public FormsPage selectHobbies() {
+		hobbies.click();
+		return new FormsPage(driver);
+	}
+
+	@Step
+	public FormsPage clickOnSubmit() {
+		submit.click();
 		return new FormsPage(driver);
 	}
 
